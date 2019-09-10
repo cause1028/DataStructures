@@ -81,7 +81,7 @@ class NodeList {
             System.out.println("链表为空");
             return null;
         }
-        return node.next;
+        return node;
     }
 
     public Node get(int i) {
@@ -105,14 +105,5 @@ class NodeList {
             i++;
         }
         return i;
-    }
-}
-
-class Node {
-    int no;
-    Node next = null;
-
-    public Node(int no) {
-        this.no = no;
     }
 }
