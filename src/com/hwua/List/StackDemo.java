@@ -55,3 +55,41 @@ class MyStack {
         }
     }
 }
+
+class MyListStack {
+    private int maxsize;
+    private NodeList list;
+    private int top;
+
+    public MyListStack() {
+        list = new NodeList();
+        top = -1;
+    }
+
+    //入栈
+    public void push(int num) {
+        if (top == maxsize - 1) {
+            System.out.println("栈满");
+            return;
+        }
+        top++;
+        list.add(new Node(num));
+    }
+
+    //出栈
+    public int pop() {
+        if (top == -1) {
+            throw new RuntimeException("栈空");
+        }
+        Node node = list.get(top);
+        top--;
+        return node.no;
+    }
+
+    //打印
+    public void show() {
+        for (int i = top; i >= 0; i--) {
+            System.out.println(list.get(i).no);
+        }
+    }
+}
